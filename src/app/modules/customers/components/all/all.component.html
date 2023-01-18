@@ -1,0 +1,24 @@
+<div class="contents">
+  <div class="first-row">
+    <span class="title">all Customers ({{ ($customers | async)?.length}})</span>
+    <app-button (clicked)="addCustomerClicked()" title="Add Customer"></app-button>
+  </div>
+
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>cell number</th>
+      <th>action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of $customers | async">
+        <td><span>{{customer.name}}</span></td>
+        <td><span>{{customer.surname}}</span></td>
+        <td><span>{{customer.cellNumber}}</span></td>
+        <td><span class="link" (click)="readMore(customer.actionLink)">Read more...</span></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

@@ -1,0 +1,24 @@
+<span class="form-title">Add Customer - Details</span>
+
+<div class="inputs">
+  <app-input
+ [control]="formGroup.controls.name"
+ inputId="name"
+ label="First Name"
+ ></app-input>
+<app-input
+ [control]="formGroup.controls.surname"
+ inputId="surname"
+ label="Last Name"
+ ></app-input>
+<app-input
+ [control]="formGroup.controls.cellNumber"
+ inputId="cellphone"
+ label="Cell Phone"
+ ></app-input>
+</div>
+
+<div class="buttons flex-end">
+  <app-button (clicked)="next()" title="Next"></app-button>
+</div>
+

@@ -1,0 +1,16 @@
+<span class="form-title"> Add Customer - Comments</span>
+
+<div class="inputs">
+
+<app-input
+ [control]="formGroup.controls.additionalComments"
+ inputId="additionalComments"
+ label="additional comments"
+ type="textarea"
+ ></app-input>
+</div>
+
+<div class="buttons space-between">
+  <app-button (clicked)="back()" title="Back"></app-button>
+  <app-button (clicked)="submit()" title="submit"></app-button>
+</div>

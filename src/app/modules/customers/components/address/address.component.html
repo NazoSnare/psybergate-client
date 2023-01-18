@@ -1,0 +1,48 @@
+<span class="form-title">Add Customer - Addresses</span>
+
+<div class="inputs">
+  <app-input
+ [control]="physicalAddressFormGroup.controls.firstline"
+ inputId="firstline"
+ label="physical address"
+ ></app-input>
+<app-input
+ [control]="physicalAddressFormGroup.controls.secondline"
+ inputId="secondline"
+ ></app-input>
+<app-input
+ [control]="physicalAddressFormGroup.controls.thirdline"
+ inputId="cellphone"
+ ></app-input>
+<app-input
+ [control]="physicalAddressFormGroup.controls.fourthline"
+ inputId="fourthline"
+ ></app-input>
+</div>
+
+<span class="form-title"></span>
+
+<div class="inputs">
+  <app-input
+ [control]="postalAddressFormGroup.controls.firstline"
+ label="postal address"
+ inputId="firstline"
+ ></app-input>
+<app-input
+ [control]="postalAddressFormGroup.controls.secondline"
+ inputId="secondline"
+ ></app-input>
+<app-input
+ [control]="postalAddressFormGroup.controls.thirdline"
+ inputId="cellphone"
+ ></app-input>
+<app-input
+ [control]="postalAddressFormGroup.controls.fourthline"
+ inputId="fourthline"
+ ></app-input>
+</div>
+
+<div class="buttons space-between">
+  <app-button (clicked)="back()" title="Back"></app-button>
+  <app-button (clicked)="next()" title="Next"></app-button>
+</div>

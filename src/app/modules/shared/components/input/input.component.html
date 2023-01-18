@@ -1,0 +1,5 @@
+<div class="form-control" [ngClass]="{'with-margin': label.length > 0 }">
+  <label [for]="inputId">{{label}}</label>
+  <input *ngIf="type==='text'" [formControl]="control" [id]="inputId" [autocomplete]="'off'" >
+  <textarea *ngIf="type==='textarea'" [formControl]="control" [id]="inputId" [autocomplete]="'off'" rows="3" type="textarea"></textarea>
+</div>

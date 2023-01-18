@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body, * {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.error {
+  color: red;
+}
+
+.contents {
+  padding: 1rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.link {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.buttons {
+  display: flex;
+  margin-top: 1.2rem !important;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.form-title {
+  display: inline-block;
+  margin-bottom: 0.9rem !important;
+  font-size: 1.3rem;
+}
+
