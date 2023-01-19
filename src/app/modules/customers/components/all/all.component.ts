@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AllComponent {
    $customers: Observable<Customer[]>;
+
   constructor(
     private _customersService: CustomerService,
     private _router: Router

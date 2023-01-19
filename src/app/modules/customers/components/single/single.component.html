@@ -1,1 +1,20 @@
-<p>single works!</p>
+
+<div class="contents">
+  <ng-container *ngIf="($customer | async) as customer">
+    <div class="line">
+      <span class="capitalize" class="form-title">{{customer.name}} {{customer.surname}}</span>
+    </div>
+    <div class="line">
+      <span class="capitalize">Cell Number: {{customer.cellNumber}} </span>
+    </div>
+    <div class="line">
+      <span class="capitalize">Physical Address: {{customer.physicalAddress | address}}</span>
+    </div>
+    <div class="line">
+      <span class="capitalize">Postal Address: {{customer.postalAddress | address}} </span>
+    </div>
+    <div class="line">
+      <span>Comments: {{customer.comments}} </span>
+    </div>
+  </ng-container>
+</div>

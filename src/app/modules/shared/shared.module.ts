@@ -1,5 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AddressPipe } from './pipes/address.pipe';
 import { ButtonComponent } from './components/button/button.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     ButtonComponent,
     InputComponent,
+    AddressPipe,
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    AddressPipe
   ]
 })
 export class SharedModule { }

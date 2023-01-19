@@ -1,6 +1,8 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { Address } from '../../models/address.model';
 import { Component } from '@angular/core';
+import { CustomerService } from '../../services/customer.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,12 +27,26 @@ export class AddressComponent {
   });
 
   constructor(
-    private _router: Router
+    private _router: Router,
+    private _customerService: CustomerService
   ) {
 
   }
 
+  ngOnInit(): void {
+    const tempPostal = this._customerService.getPostalAddress();
+    const tempPhysical = this._customerService.getPhysicalAddress();
+    if(tempPostal) this.postalAddressFormGroup.setValue(tempPostal);
+    if(tempPhysical) this.physicalAddressFormGroup.setValue(tempPhysical);
+
+ }
+
   public async next(): Promise<Boolean> {
+    if(this.physicalAddressFormGroup.invalid && this.postalAddressFormGroup.invalid) return false;
+    const physicalAddress = this.physicalAddressFormGroup.value as Address;
+    const postalAddress = this.postalAddressFormGroup.value as Address;
+    this._customerService.savePhysicalAddress(physicalAddress);
+    this._customerService.savePostalAddress(postalAddress);
     return this._router.navigateByUrl('/customers/new/comments');
   }
   public async back(): Promise<Boolean> {

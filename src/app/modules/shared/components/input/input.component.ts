@@ -9,11 +9,18 @@ import { FormControl } from '@angular/forms';
 })
 export class InputComponent {
 
-  @Input() inputId: string  = '';
-  @Input() control = new FormControl();
-  @Input() label: string = '';
-  @Input() placeholder: string = '';
-  @Input() type: string = 'text';
+  @Input() public inputId: string  = '';
+  @Input() public control = new FormControl();
+  @Input() public label: string = '';
+  @Input() public placeholder: string = '';
+  @Input() public type: string = 'text';
+
+  public errorMessages: Record<string, string> = {
+    required: 'The field is required',
+    email: 'The email is invalid',
+    length: 'The length is invalid',
+    minlength: 'The minimum length is not'
+  }
 
   constructor() {
 
